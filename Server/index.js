@@ -1,6 +1,14 @@
 // const express = require('express')
 import express, { json } from 'express'
 import jwt from 'jsonwebtoken'
+import mongoose from 'mongoose'
+
+mongoose
+	.connect(
+		'mongodb+srv://tvong:R2o3m0a3n@cluster0.4mrqw.mongodb.net/?retryWrites=true&w=majority'
+	)
+	.then(() => console.log('DB connect'))
+	.catch(err => console.log('DB not connect. ' + err))
 
 const app = express()
 const port = 3000
